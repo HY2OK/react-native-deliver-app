@@ -1,7 +1,18 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const RestaurantScreen = () => {
+const RestaurantScreen = ({
+  id,
+  imgUrl,
+  title,
+  rating,
+  genre,
+  address,
+  shortDescription,
+  dishes,
+  long,
+  lat,
+}) => {
   return (
     <View>
       <Text>RestaurantScreen</Text>

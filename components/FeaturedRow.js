@@ -4,7 +4,7 @@ import { getFeaturedRestaurantsById } from '../api'
 import { ArrowRightIcon } from 'react-native-heroicons/outline'
 import RestaurantCard from './RestaurantCard'
 
-const FeaturedRow = ({ key, id, title, description }) => {
+const FeaturedRow = ({ id, title, description }) => {
   const [restaurants, setRestaurants] = useState([])
 
   useEffect(() => {
@@ -23,7 +23,12 @@ const FeaturedRow = ({ key, id, title, description }) => {
       </View>
 
       <Text className="text-xs text-gray-500 px-4">{description}</Text>
-      <ScrollView>
+      <ScrollView
+        horizontal
+        contentContainerStyle={{ paddingHorizontal: 15 }}
+        showsVerticalScrollIndicator={false}
+        className="pt-4"
+      >
         {restaurants?.map((restaurant) => (
           <RestaurantCard
             key={restaurant._id}
@@ -33,7 +38,7 @@ const FeaturedRow = ({ key, id, title, description }) => {
             rating={restaurant.rating}
             genre={restaurant.type?.name}
             address={restaurant.address}
-            short_description={restaurant.short_description}
+            shortDescription={restaurant.short_description}
             dishes={restaurant.dishes}
             long={restaurant.long}
             lat={restaurant.lat}
