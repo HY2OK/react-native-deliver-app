@@ -12,7 +12,8 @@ import { MinusCircleIcon, PlusCircleIcon } from 'react-native-heroicons/outline'
 
 const DishRow = ({ id, name, description, price, image }) => {
   const [isPressed, setIsPressed] = useState(false)
-  const items = useSelector((state) => selectBasketItemsWithId(state, id))
+  const items2 = useSelector((state) => state.basket.items)
+  const items = items2.filter((item) => item.id === id)
   const dispatch = useDispatch()
 
   const addItemToBasket = () => {
