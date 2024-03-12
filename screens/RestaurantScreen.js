@@ -116,11 +116,11 @@ const RestaurantScreen = () => {
             {dishes?.map((dish) => (
               <DishRow
                 key={dish._id}
-                id={dishes._id}
-                name={dishes.name}
-                description={dishes.description}
-                price={dishes.price}
-                image={dishes.image}
+                id={dish._id}
+                name={dish.name}
+                description={dish.short_description}
+                price={dish.price}
+                image={dish.image}
               />
             ))}
           </View>
